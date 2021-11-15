@@ -1,0 +1,28 @@
+USE [pl]
+GO
+
+/****** Object:  Table [dbo].[webappuser]    Script Date: 30/07/2021 18:51:13 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[webappuser](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[resp] [int] NULL,
+	[date_pick] [datetime] NOT NULL,
+	[usuario] [nvarchar](100) NULL,
+	[perfil] [varchar](max) NULL,
+	[token_user] [varchar](30) NULL,
+ CONSTRAINT [PK_webappuser_1] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[webappuser] ADD  CONSTRAINT [DF_webappuser_date_pick]  DEFAULT (getdate()) FOR [date_pick]
+GO
+
+

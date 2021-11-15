@@ -1,0 +1,30 @@
+USE [pl]
+GO
+
+/****** Object:  Table [dbo].[chanels]    Script Date: 30/07/2021 18:49:39 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[chanels](
+	[usuario] [nvarchar](100) NOT NULL,
+	[imgcanal] [varchar](max) NULL,
+	[date] [datetime] NULL,
+	[descripcion_canal] [varchar](200) NULL,
+	[estado] [int] NULL,
+	[token_canal] [nvarchar](30) NOT NULL,
+	[token_user] [nvarchar](20) NULL,
+ CONSTRAINT [PK_chanels] PRIMARY KEY CLUSTERED 
+(
+	[usuario] ASC,
+	[token_canal] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[chanels] ADD  CONSTRAINT [DF_chanels_date]  DEFAULT (getdate()) FOR [date]
+GO
+
+

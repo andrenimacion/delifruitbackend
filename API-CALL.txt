@@ -1,0 +1,15 @@
+[API REST SYSCOMPSA]
+---------------------------------------------------
+APIREST[Idp03a188]
+http://www.syscompsa.somee.com/api/AR_1-GraficasCamApp/GetGenView
+---------------------------------------------------
+APIREST[Sp_alimenproy] | [exec sp_alimenproy @siembra]
+http://www.syscompsa.somee.com/api/AR_1-GraficasCamApp/sp_alimenproy/{siembra}
+---------------------------------------------------
+APIREST[sp_datagraph] | [exec sp_datagraph @siembra]
+http://www.syscompsa.somee.com/api/AR_1-GraficasCamApp/sp_datagraph/{siembra}
+---------------------------------------------------
+APIREST[SP_GRAFICAWEB] | [exec SP_GRAFICAWEB @siembra]
+http://www.syscompsa.somee.com/api/AR_1-GraficasCamApp/SP_GRAFICAWEB/{siembra}
+
+
